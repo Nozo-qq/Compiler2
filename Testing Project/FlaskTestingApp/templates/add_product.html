@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<a href="/" class="back-btn">Back</a>
+
+<h1 class="title">Add Product</h1>
+
+<form method="POST" class="form-box">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Price:</label>
+    <input type="number" name="price" step="0.01" required>
+
+    <label>Description:</label>
+    <textarea name="description" required></textarea>
+
+    <label>Image filename (e.g. laptop.jpg):</label>
+    <input type="text" name="image" required>
+
+    <button type="submit">Add Product</button>
+</form>
+
+</body>
+</html>
