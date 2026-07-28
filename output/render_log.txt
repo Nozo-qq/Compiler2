@@ -1,0 +1,5 @@
+product.html: 'product.name' is undefined, rendered as empty string
+product.html: 'product.image' is undefined, rendered as empty string
+product.html: 'product.name' is undefined, rendered as empty string
+product.html: 'product.price' is undefined, rendered as empty string
+product.html: 'product.description' is undefined, rendered as empty string

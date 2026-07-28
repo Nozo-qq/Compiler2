@@ -1,0 +1,838 @@
+{
+  "type": "Program",
+  "line": 0,
+  "statements": [
+    {
+      "type": "ImportStatement",
+      "line": 1,
+      "packageParts": [
+        "flask"
+      ],
+      "importedNames": [
+        "Flask",
+        "render_template",
+        "request",
+        "redirect",
+        "url_for",
+        "send_from_directory"
+      ]
+    },
+    {
+      "type": "Assignment",
+      "line": 3,
+      "left": {
+        "type": "Name",
+        "line": 3,
+        "id": "app"
+      },
+      "right": {
+        "type": "FunctionCall",
+        "line": 3,
+        "called": {
+          "type": "Name",
+          "line": 3,
+          "id": "Flask"
+        },
+        "args": [
+          {
+            "type": "Name",
+            "line": 3,
+            "id": "__name__"
+          }
+        ],
+        "kwargs": {}
+      }
+    },
+    {
+      "type": "FunctionDef",
+      "line": 8,
+      "name": "images",
+      "parameters": [
+        "filename"
+      ],
+      "decorators": [
+        {
+          "type": "Decorator",
+          "line": 8,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 8,
+            "called": {
+              "type": "Attribute",
+              "line": 8,
+              "object": {
+                "type": "Name",
+                "line": 8,
+                "id": "app"
+              },
+              "attribute": "route"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 8,
+                "value": "/images/<path:filename>"
+              }
+            ],
+            "kwargs": {}
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "ReturnStatement",
+          "line": 10,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 10,
+            "called": {
+              "type": "Name",
+              "line": 10,
+              "id": "send_from_directory"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 10,
+                "value": "images"
+              },
+              {
+                "type": "Name",
+                "line": 10,
+                "id": "filename"
+              }
+            ],
+            "kwargs": {}
+          }
+        }
+      ]
+    },
+    {
+      "type": "Assignment",
+      "line": 13,
+      "left": {
+        "type": "Name",
+        "line": 13,
+        "id": "products"
+      },
+      "right": {
+        "type": "ListExpr",
+        "line": 13,
+        "elements": [
+          {
+            "type": "DictExpr",
+            "line": 14,
+            "pairs": {
+              "id": {
+                "type": "Literal",
+                "line": 15,
+                "value": 1
+              },
+              "name": {
+                "type": "Literal",
+                "line": 16,
+                "value": "Laptop"
+              },
+              "price": {
+                "type": "Literal",
+                "line": 17,
+                "value": 999
+              },
+              "description": {
+                "type": "Literal",
+                "line": 18,
+                "value": "Fast and reliable laptop."
+              },
+              "image": {
+                "type": "Literal",
+                "line": 19,
+                "value": "laptop.jpg"
+              }
+            }
+          },
+          {
+            "type": "DictExpr",
+            "line": 21,
+            "pairs": {
+              "id": {
+                "type": "Literal",
+                "line": 22,
+                "value": 2
+              },
+              "name": {
+                "type": "Literal",
+                "line": 23,
+                "value": "Phone"
+              },
+              "price": {
+                "type": "Literal",
+                "line": 24,
+                "value": 499
+              },
+              "description": {
+                "type": "Literal",
+                "line": 25,
+                "value": "High-quality camera smartphone."
+              },
+              "image": {
+                "type": "Literal",
+                "line": 26,
+                "value": "phone.jpg"
+              }
+            }
+          },
+          {
+            "type": "DictExpr",
+            "line": 28,
+            "pairs": {
+              "id": {
+                "type": "Literal",
+                "line": 29,
+                "value": 3
+              },
+              "name": {
+                "type": "Literal",
+                "line": 30,
+                "value": "Headphones"
+              },
+              "price": {
+                "type": "Literal",
+                "line": 31,
+                "value": 199
+              },
+              "description": {
+                "type": "Literal",
+                "line": 32,
+                "value": "Noise-cancelling headphones."
+              },
+              "image": {
+                "type": "Literal",
+                "line": 33,
+                "value": "headphones.jpg"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "FunctionDef",
+      "line": 38,
+      "name": "home",
+      "parameters": [],
+      "decorators": [
+        {
+          "type": "Decorator",
+          "line": 38,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 38,
+            "called": {
+              "type": "Attribute",
+              "line": 38,
+              "object": {
+                "type": "Name",
+                "line": 38,
+                "id": "app"
+              },
+              "attribute": "route"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 38,
+                "value": "/"
+              }
+            ],
+            "kwargs": {}
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "ReturnStatement",
+          "line": 41,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 41,
+            "called": {
+              "type": "Name",
+              "line": 41,
+              "id": "render_template"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 41,
+                "value": "index.html"
+              }
+            ],
+            "kwargs": {
+              "products": {
+                "type": "Name",
+                "line": 41,
+                "id": "products"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "FunctionDef",
+      "line": 44,
+      "name": "product_details",
+      "parameters": [
+        "product_id"
+      ],
+      "decorators": [
+        {
+          "type": "Decorator",
+          "line": 44,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 44,
+            "called": {
+              "type": "Attribute",
+              "line": 44,
+              "object": {
+                "type": "Name",
+                "line": 44,
+                "id": "app"
+              },
+              "attribute": "route"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 44,
+                "value": "/product/<int:product_id>"
+              }
+            ],
+            "kwargs": {}
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "Assignment",
+          "line": 46,
+          "left": {
+            "type": "Name",
+            "line": 46,
+            "id": "product"
+          },
+          "right": {
+            "type": "Literal",
+            "line": 46,
+            "value": null
+          }
+        },
+        {
+          "type": "ForStatement",
+          "line": 47,
+          "iterableExpression": {
+            "type": "Name",
+            "line": 47,
+            "id": "products"
+          },
+          "iteratorName": "p",
+          "body": [
+            {
+              "type": "IfStatement",
+              "line": 48,
+              "condition": {
+                "type": "BinaryOperation",
+                "line": 48,
+                "operator": "==",
+                "left": {
+                  "type": "Subscript",
+                  "line": 48,
+                  "value": {
+                    "type": "Name",
+                    "line": 48,
+                    "id": "p"
+                  },
+                  "index": {
+                    "type": "Literal",
+                    "line": 48,
+                    "value": "id"
+                  }
+                },
+                "right": {
+                  "type": "Name",
+                  "line": 48,
+                  "id": "product_id"
+                }
+              },
+              "body": [
+                {
+                  "type": "Assignment",
+                  "line": 49,
+                  "left": {
+                    "type": "Name",
+                    "line": 49,
+                    "id": "product"
+                  },
+                  "right": {
+                    "type": "Name",
+                    "line": 49,
+                    "id": "p"
+                  }
+                },
+                {
+                  "type": "BreakStatement",
+                  "line": 50
+                }
+              ],
+              "elseBody": []
+            }
+          ]
+        },
+        {
+          "type": "ReturnStatement",
+          "line": 51,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 51,
+            "called": {
+              "type": "Name",
+              "line": 51,
+              "id": "render_template"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 51,
+                "value": "product.html"
+              }
+            ],
+            "kwargs": {
+              "product": {
+                "type": "Name",
+                "line": 51,
+                "id": "product"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "FunctionDef",
+      "line": 54,
+      "name": "add_product",
+      "parameters": [],
+      "decorators": [
+        {
+          "type": "Decorator",
+          "line": 54,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 54,
+            "called": {
+              "type": "Attribute",
+              "line": 54,
+              "object": {
+                "type": "Name",
+                "line": 54,
+                "id": "app"
+              },
+              "attribute": "route"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 54,
+                "value": "/add"
+              }
+            ],
+            "kwargs": {
+              "methods": {
+                "type": "ListExpr",
+                "line": 54,
+                "elements": [
+                  {
+                    "type": "Literal",
+                    "line": 54,
+                    "value": "GET"
+                  },
+                  {
+                    "type": "Literal",
+                    "line": 54,
+                    "value": "POST"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "IfStatement",
+          "line": 56,
+          "condition": {
+            "type": "BinaryOperation",
+            "line": 56,
+            "operator": "==",
+            "left": {
+              "type": "Attribute",
+              "line": 56,
+              "object": {
+                "type": "Name",
+                "line": 56,
+                "id": "request"
+              },
+              "attribute": "method"
+            },
+            "right": {
+              "type": "Literal",
+              "line": 56,
+              "value": "POST"
+            }
+          },
+          "body": [
+            {
+              "type": "Assignment",
+              "line": 58,
+              "left": {
+                "type": "Name",
+                "line": 58,
+                "id": "new_id"
+              },
+              "right": {
+                "type": "Literal",
+                "line": 58,
+                "value": 1
+              }
+            },
+            {
+              "type": "IfStatement",
+              "line": 59,
+              "condition": {
+                "type": "Name",
+                "line": 59,
+                "id": "products"
+              },
+              "body": [
+                {
+                  "type": "Assignment",
+                  "line": 60,
+                  "left": {
+                    "type": "Name",
+                    "line": 60,
+                    "id": "max_id"
+                  },
+                  "right": {
+                    "type": "Subscript",
+                    "line": 60,
+                    "value": {
+                      "type": "Subscript",
+                      "line": 60,
+                      "value": {
+                        "type": "Name",
+                        "line": 60,
+                        "id": "products"
+                      },
+                      "index": {
+                        "type": "Literal",
+                        "line": 60,
+                        "value": 0
+                      }
+                    },
+                    "index": {
+                      "type": "Literal",
+                      "line": 60,
+                      "value": "id"
+                    }
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "line": 61,
+                  "iterableExpression": {
+                    "type": "Name",
+                    "line": 61,
+                    "id": "products"
+                  },
+                  "iteratorName": "p",
+                  "body": [
+                    {
+                      "type": "IfStatement",
+                      "line": 62,
+                      "condition": {
+                        "type": "BinaryOperation",
+                        "line": 62,
+                        "operator": ">",
+                        "left": {
+                          "type": "Subscript",
+                          "line": 62,
+                          "value": {
+                            "type": "Name",
+                            "line": 62,
+                            "id": "p"
+                          },
+                          "index": {
+                            "type": "Literal",
+                            "line": 62,
+                            "value": "id"
+                          }
+                        },
+                        "right": {
+                          "type": "Name",
+                          "line": 62,
+                          "id": "max_id"
+                        }
+                      },
+                      "body": [
+                        {
+                          "type": "Assignment",
+                          "line": 63,
+                          "left": {
+                            "type": "Name",
+                            "line": 63,
+                            "id": "max_id"
+                          },
+                          "right": {
+                            "type": "Subscript",
+                            "line": 63,
+                            "value": {
+                              "type": "Name",
+                              "line": 63,
+                              "id": "p"
+                            },
+                            "index": {
+                              "type": "Literal",
+                              "line": 63,
+                              "value": "id"
+                            }
+                          }
+                        }
+                      ],
+                      "elseBody": []
+                    }
+                  ]
+                },
+                {
+                  "type": "Assignment",
+                  "line": 64,
+                  "left": {
+                    "type": "Name",
+                    "line": 64,
+                    "id": "new_id"
+                  },
+                  "right": {
+                    "type": "BinaryOperation",
+                    "line": 64,
+                    "operator": "+",
+                    "left": {
+                      "type": "Name",
+                      "line": 64,
+                      "id": "max_id"
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "line": 64,
+                      "value": 1
+                    }
+                  }
+                }
+              ],
+              "elseBody": []
+            },
+            {
+              "type": "Assignment",
+              "line": 66,
+              "left": {
+                "type": "Name",
+                "line": 66,
+                "id": "new_product"
+              },
+              "right": {
+                "type": "DictExpr",
+                "line": 66,
+                "pairs": {
+                  "id": {
+                    "type": "Name",
+                    "line": 67,
+                    "id": "new_id"
+                  },
+                  "name": {
+                    "type": "Subscript",
+                    "line": 68,
+                    "value": {
+                      "type": "Attribute",
+                      "line": 68,
+                      "object": {
+                        "type": "Name",
+                        "line": 68,
+                        "id": "request"
+                      },
+                      "attribute": "form"
+                    },
+                    "index": {
+                      "type": "Literal",
+                      "line": 68,
+                      "value": "name"
+                    }
+                  },
+                  "price": {
+                    "type": "FunctionCall",
+                    "line": 69,
+                    "called": {
+                      "type": "Name",
+                      "line": 69,
+                      "id": "float"
+                    },
+                    "args": [
+                      {
+                        "type": "Subscript",
+                        "line": 69,
+                        "value": {
+                          "type": "Attribute",
+                          "line": 69,
+                          "object": {
+                            "type": "Name",
+                            "line": 69,
+                            "id": "request"
+                          },
+                          "attribute": "form"
+                        },
+                        "index": {
+                          "type": "Literal",
+                          "line": 69,
+                          "value": "price"
+                        }
+                      }
+                    ],
+                    "kwargs": {}
+                  },
+                  "description": {
+                    "type": "Subscript",
+                    "line": 70,
+                    "value": {
+                      "type": "Attribute",
+                      "line": 70,
+                      "object": {
+                        "type": "Name",
+                        "line": 70,
+                        "id": "request"
+                      },
+                      "attribute": "form"
+                    },
+                    "index": {
+                      "type": "Literal",
+                      "line": 70,
+                      "value": "description"
+                    }
+                  },
+                  "image": {
+                    "type": "Subscript",
+                    "line": 71,
+                    "value": {
+                      "type": "Attribute",
+                      "line": 71,
+                      "object": {
+                        "type": "Name",
+                        "line": 71,
+                        "id": "request"
+                      },
+                      "attribute": "form"
+                    },
+                    "index": {
+                      "type": "Literal",
+                      "line": 71,
+                      "value": "image"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "ExpressionStatement",
+              "line": 74,
+              "expression": {
+                "type": "FunctionCall",
+                "line": 74,
+                "called": {
+                  "type": "Attribute",
+                  "line": 74,
+                  "object": {
+                    "type": "Name",
+                    "line": 74,
+                    "id": "products"
+                  },
+                  "attribute": "append"
+                },
+                "args": [
+                  {
+                    "type": "Name",
+                    "line": 74,
+                    "id": "new_product"
+                  }
+                ],
+                "kwargs": {}
+              }
+            },
+            {
+              "type": "ReturnStatement",
+              "line": 75,
+              "expression": {
+                "type": "FunctionCall",
+                "line": 75,
+                "called": {
+                  "type": "Name",
+                  "line": 75,
+                  "id": "redirect"
+                },
+                "args": [
+                  {
+                    "type": "FunctionCall",
+                    "line": 75,
+                    "called": {
+                      "type": "Name",
+                      "line": 75,
+                      "id": "url_for"
+                    },
+                    "args": [
+                      {
+                        "type": "Literal",
+                        "line": 75,
+                        "value": "home"
+                      }
+                    ],
+                    "kwargs": {}
+                  }
+                ],
+                "kwargs": {}
+              }
+            }
+          ],
+          "elseBody": []
+        },
+        {
+          "type": "ReturnStatement",
+          "line": 77,
+          "expression": {
+            "type": "FunctionCall",
+            "line": 77,
+            "called": {
+              "type": "Name",
+              "line": 77,
+              "id": "render_template"
+            },
+            "args": [
+              {
+                "type": "Literal",
+                "line": 77,
+                "value": "add_product.html"
+              }
+            ],
+            "kwargs": {}
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// Generated from D:/Nozo/Projects/Compiler2/src/antlr/grammar/Jinja2withHTMLandCSS/Jinja2withHTMLandCSSParser.g4 by ANTLR 4.13.2
+// Generated from Jinja2withHTMLandCSSParser.g4 by ANTLR 4.13.2
 package antlr.grammar.Jinja2withHTMLandCSS.gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -43,13 +43,6 @@ public interface Jinja2withHTMLandCSSParserVisitor<T> extends ParseTreeVisitor<T
 	 */
 	T visitDoctype(Jinja2withHTMLandCSSParser.DoctypeContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code openCloseTag}
-	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code selfClosingTag}
 	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
 	 * @param ctx the parse tree
@@ -57,11 +50,12 @@ public interface Jinja2withHTMLandCSSParserVisitor<T> extends ParseTreeVisitor<T
 	 */
 	T visitSelfClosingTag(Jinja2withHTMLandCSSParser.SelfClosingTagContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#startTag}.
+	 * Visit a parse tree produced by the {@code openCloseTag}
+	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStartTag(Jinja2withHTMLandCSSParser.StartTagContext ctx);
+	T visitOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#endTag}.
 	 * @param ctx the parse tree
@@ -128,6 +122,36 @@ public interface Jinja2withHTMLandCSSParserVisitor<T> extends ParseTreeVisitor<T
 	 * @return the visitor result
 	 */
 	T visitExpression(Jinja2withHTMLandCSSParser.ExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#exprContent}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprContent(Jinja2withHTMLandCSSParser.ExprContentContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#exprContentOnly}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprContentOnly(Jinja2withHTMLandCSSParser.ExprContentOnlyContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#argList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArgList(Jinja2withHTMLandCSSParser.ArgListContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#argItem}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArgItem(Jinja2withHTMLandCSSParser.ArgItemContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#argValue}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArgValue(Jinja2withHTMLandCSSParser.ArgValueContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Jinja2withHTMLandCSSParser#memberAccess}.
 	 * @param ctx the parse tree

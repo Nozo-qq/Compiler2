@@ -1,4 +1,4 @@
-// Generated from D:/Nozo/Projects/Compiler2/src/antlr/grammar/Jinja2withHTMLandCSS/Jinja2withHTMLandCSSParser.g4 by ANTLR 4.13.2
+// Generated from Jinja2withHTMLandCSSParser.g4 by ANTLR 4.13.2
 package antlr.grammar.Jinja2withHTMLandCSS.gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -62,18 +62,6 @@ public interface Jinja2withHTMLandCSSParserListener extends ParseTreeListener {
 	 */
 	void exitDoctype(Jinja2withHTMLandCSSParser.DoctypeContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code openCloseTag}
-	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
-	 * @param ctx the parse tree
-	 */
-	void enterOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code openCloseTag}
-	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
-	 * @param ctx the parse tree
-	 */
-	void exitOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code selfClosingTag}
 	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
 	 * @param ctx the parse tree
@@ -86,15 +74,17 @@ public interface Jinja2withHTMLandCSSParserListener extends ParseTreeListener {
 	 */
 	void exitSelfClosingTag(Jinja2withHTMLandCSSParser.SelfClosingTagContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#startTag}.
+	 * Enter a parse tree produced by the {@code openCloseTag}
+	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
 	 * @param ctx the parse tree
 	 */
-	void enterStartTag(Jinja2withHTMLandCSSParser.StartTagContext ctx);
+	void enterOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Jinja2withHTMLandCSSParser#startTag}.
+	 * Exit a parse tree produced by the {@code openCloseTag}
+	 * labeled alternative in {@link Jinja2withHTMLandCSSParser#htmlelement}.
 	 * @param ctx the parse tree
 	 */
-	void exitStartTag(Jinja2withHTMLandCSSParser.StartTagContext ctx);
+	void exitOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#endTag}.
 	 * @param ctx the parse tree
@@ -207,6 +197,56 @@ public interface Jinja2withHTMLandCSSParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(Jinja2withHTMLandCSSParser.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#exprContent}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprContent(Jinja2withHTMLandCSSParser.ExprContentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Jinja2withHTMLandCSSParser#exprContent}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprContent(Jinja2withHTMLandCSSParser.ExprContentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#exprContentOnly}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprContentOnly(Jinja2withHTMLandCSSParser.ExprContentOnlyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Jinja2withHTMLandCSSParser#exprContentOnly}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprContentOnly(Jinja2withHTMLandCSSParser.ExprContentOnlyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#argList}.
+	 * @param ctx the parse tree
+	 */
+	void enterArgList(Jinja2withHTMLandCSSParser.ArgListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Jinja2withHTMLandCSSParser#argList}.
+	 * @param ctx the parse tree
+	 */
+	void exitArgList(Jinja2withHTMLandCSSParser.ArgListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#argItem}.
+	 * @param ctx the parse tree
+	 */
+	void enterArgItem(Jinja2withHTMLandCSSParser.ArgItemContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Jinja2withHTMLandCSSParser#argItem}.
+	 * @param ctx the parse tree
+	 */
+	void exitArgItem(Jinja2withHTMLandCSSParser.ArgItemContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#argValue}.
+	 * @param ctx the parse tree
+	 */
+	void enterArgValue(Jinja2withHTMLandCSSParser.ArgValueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Jinja2withHTMLandCSSParser#argValue}.
+	 * @param ctx the parse tree
+	 */
+	void exitArgValue(Jinja2withHTMLandCSSParser.ArgValueContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Jinja2withHTMLandCSSParser#memberAccess}.
 	 * @param ctx the parse tree

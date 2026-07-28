@@ -1,4 +1,4 @@
-// Generated from D:/Nozo/Projects/Compiler2/src/antlr/grammar/Jinja2withHTMLandCSS/Jinja2withHTMLandCSSParser.g4 by ANTLR 4.13.2
+// Generated from Jinja2withHTMLandCSSParser.g4 by ANTLR 4.13.2
 package antlr.grammar.Jinja2withHTMLandCSS.gen;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -77,18 +77,6 @@ public class Jinja2withHTMLandCSSParserBaseListener implements Jinja2withHTMLand
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterSelfClosingTag(Jinja2withHTMLandCSSParser.SelfClosingTagContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -101,13 +89,13 @@ public class Jinja2withHTMLandCSSParserBaseListener implements Jinja2withHTMLand
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStartTag(Jinja2withHTMLandCSSParser.StartTagContext ctx) { }
+	@Override public void enterOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStartTag(Jinja2withHTMLandCSSParser.StartTagContext ctx) { }
+	@Override public void exitOpenCloseTag(Jinja2withHTMLandCSSParser.OpenCloseTagContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -228,6 +216,66 @@ public class Jinja2withHTMLandCSSParserBaseListener implements Jinja2withHTMLand
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpression(Jinja2withHTMLandCSSParser.ExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprContent(Jinja2withHTMLandCSSParser.ExprContentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprContent(Jinja2withHTMLandCSSParser.ExprContentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprContentOnly(Jinja2withHTMLandCSSParser.ExprContentOnlyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprContentOnly(Jinja2withHTMLandCSSParser.ExprContentOnlyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArgList(Jinja2withHTMLandCSSParser.ArgListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArgList(Jinja2withHTMLandCSSParser.ArgListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArgItem(Jinja2withHTMLandCSSParser.ArgItemContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArgItem(Jinja2withHTMLandCSSParser.ArgItemContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArgValue(Jinja2withHTMLandCSSParser.ArgValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArgValue(Jinja2withHTMLandCSSParser.ArgValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,0 +1,13 @@
+Semantic Analysis Report
+Generated: 2026-07-29T00:18:15.728975800
+Status: PASSED
+
+Top-level functions (4):
+  - images
+  - home
+  - product_details
+  - add_product
+
+Top-level variables (2):
+  - app
+  - products

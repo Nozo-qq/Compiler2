@@ -1,0 +1,4 @@
+info: top-level assignment 'app' skipped (not statically resolvable: FunctionCall)
+product.html: skipped kwarg 'product' — not statically resolvable (Name 'product' (not a known top-level static assignment))
+---
+Summary: templates=3, resolvedKwargs=1, skippedKwargs=1, collisions=0
