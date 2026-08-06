@@ -18,9 +18,9 @@ public class Test {
     public static void main(String[] args) {
         try {
             // 1. ضع هنا مسار ملف الـ HTML أو الـ Jinja2 الخاص بك
-            Path htmlFilePath = Path.of(
-                    "D:\\Nozo\\Projects\\Compiler2\\Testing Project\\FlaskTestingApp\\templates\\index.html"
-            );
+            Path htmlFilePath = args.length > 0
+                    ? Path.of(args[0])
+                    : Path.of("Testing Project/FlaskTestingApp/templates/index.html");
 
             // 2. القراءة والتحليل المعجمي
             CharStream charStream = CharStreams.fromPath(htmlFilePath);
