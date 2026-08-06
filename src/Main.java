@@ -17,12 +17,12 @@ public class Main {
     public static void main(String[] args) {
         try {
             // 1. تحديد مسار مجلد قوالب HTML ومسار ملف CSS
-            Path templatesDirPath = Path.of(
-                    "D:\\Nozo\\Projects\\Compiler2\\Testing Project\\FlaskTestingApp\\templates"
-            );
-            Path cssFilePath = Path.of(
-                    "D:\\Nozo\\Projects\\Compiler2\\Testing Project\\FlaskTestingApp\\static\\style.css"
-            );
+            Path templatesDirPath = args.length > 0
+                    ? Path.of(args[0])
+                    : Path.of("Testing Project/FlaskTestingApp/templates");
+            Path cssFilePath = args.length > 1
+                    ? Path.of(args[1])
+                    : Path.of("Testing Project/FlaskTestingApp/static/style.css");
 
             // 2. إنشاء الزائر (Visitor) المشترك
             BaseVisitor visitor = new BaseVisitor();
