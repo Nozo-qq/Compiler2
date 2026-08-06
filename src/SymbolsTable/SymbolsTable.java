@@ -1,5 +1,6 @@
 package SymbolsTable;
 
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -18,7 +19,11 @@ public class SymbolsTable {
 
     public void addHtmlSymbol(String key, Object details) { symbols.put(key, details); }
 
-    public void removehtmlkey(String key) { symbols.remove(key); }
+    public void removeHtmlKey(String key) { symbols.remove(key); }
 
-    public Map<String, Object> getAll() { return symbols; }
+    /** @deprecated Use {@link #removeHtmlKey(String)} */
+    @Deprecated
+    public void removehtmlkey(String key) { removeHtmlKey(key); }
+
+    public Map<String, Object> getAll() { return Collections.unmodifiableMap(symbols); }
 }
