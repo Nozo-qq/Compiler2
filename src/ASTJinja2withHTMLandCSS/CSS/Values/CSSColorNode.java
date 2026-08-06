@@ -6,7 +6,7 @@ public class CSSColorNode extends CSSValueNode {
         super(line, value);
     }
     @Override
-    public  String label(){
-        return  null;
-    };
+    public String label() {
+        return "CSSColor " + getValue();
+    }
 }
