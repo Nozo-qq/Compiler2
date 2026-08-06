@@ -1,17 +1,22 @@
 package ASTJinja2withHTMLandCSS.CSS.Selectors;
-import ASTJinja2withHTMLandCSS.ASTNode;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SelectorChainNode extends CSSSelectorNode {
-    private final List<CSSSelectorNode> parts = new ArrayList<>();
+    private String pseudoClass;
 
-    public SelectorChainNode(int line) { super("SelectorChain", line, null); }
-    public void addPart(CSSSelectorNode part) { parts.add(part); }
+    public SelectorChainNode(int line) {
+        super(line);
+    }
+
+    public void addPart(CSSSelectorNode part) {
+        addChild(part);
+    }
+
+    public void setPseudoClass(String pseudoClass) {
+        this.pseudoClass = pseudoClass;
+    }
 
     @Override
-    public List<ASTNode> getChildren() { return new ArrayList<>(parts); }
-
-    @Override
-    protected String getNodeValue() { return "Selector Chain"; }
+    public String label() {
+        return pseudoClass != null ? "SelectorChainNode: Selector Chain (:" + pseudoClass + ")" : "SelectorChainNode: Selector Chain";
+    }
 }

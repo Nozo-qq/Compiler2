@@ -28,3 +28,10 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+gen/
+.idea/
+*.iml
+*.class
+out/
+target/

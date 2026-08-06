@@ -2,6 +2,7 @@ parser grammar Jinja2withHTMLandCSSParser;
 
 options { tokenVocab=Jinja2withHTMLandCSSLexer; }
 
+
 // --- نقطة البداية للملف ---
 prog
     : jinja2Prog #jinja2
@@ -11,8 +12,8 @@ prog
 // قاعدة لحل تعارض الكلمات المحجوزة مع أسماء الخصائص
 anyId
     : IDENTIFIER | FOR | IN | BOOL | END_FOR
+    | TAG_META | TAG_LINK | TAG_INPUT | TAG_IMG
     ;
-
 // ================= JINJA2 & HTML =================
 
 jinja2Prog
@@ -24,21 +25,33 @@ doctype
     ;
 
 htmlelement
-    : startTag elementContent* endTag                          #openCloseTag
-    | OPEN_TAG anyId attribute* (SELF_CLOSD | CLOSE_TAG)       #selfClosingTag
+    : OPEN_TAG voidTagName attribute* (SELF_CLOSED | CLOSE_TAG)    #selfClosingTag
+    | startTag elementContent* endTag                              #openCloseTag
     ;
 
 startTag
-    : OPEN_TAG anyId attribute* CLOSE_TAG
+    : OPEN_TAG tagName attribute* CLOSE_TAG
     ;
 
 endTag
-    : OPEN_TAG_SLASH anyId CLOSE_TAG
+    : OPEN_TAG_SLASH tagName CLOSE_TAG
+    ;
+
+tagName
+    : anyId
+    ;
+
+voidTagName
+    : TAG_META | TAG_LINK | TAG_INPUT | TAG_IMG
     ;
 
 attribute
-    : anyId ASSIGN attributeValue #fullAttr
-    | anyId                       #booleanAttr
+    : attributeName ASSIGN attributeValue #fullAttr
+    | attributeName                       #booleanAttr
+    ;
+
+attributeName
+    : anyId
     ;
 
 attributeValue
@@ -46,14 +59,20 @@ attributeValue
     ;
 
 elementContent
-    : htmlelement  #nestedElement
-    | expression   #jinjaExpression
-    | block        #jinjaBlock
-    | statement    #textContent
+    : htmlelement     #nestedElement
+    | expression      #jinjaExpression
+    | block           #jinjaBlock
+    | jinjaStatement  #jinjaGenericStatement
+    | statement       #textContent
+    ;
+
+// قاعدة عامة لتعليمات Jinja مثل: {% set x = 10 %}
+jinjaStatement
+    : BLOCK_START IDENTIFIER (anyId | ASSIGN | NUMBER | STRING | DOT | COMMA | LPAREN | RPAREN | PLUS | MINUS | STAR | DIVISION)* BLOCK_END
     ;
 
 statement
-    : (anyId | COLON | LPAREN | RPAREN | DOT | COMMA | PLUS | MINUS | STAR | DIVISION)+
+    : (anyId | HTML_ENTITY | NUMBER | NOT | COLON | LPAREN | RPAREN | DOT | COMMA | PLUS | MINUS | STAR | DIVISION)+
     ;
 
 expression

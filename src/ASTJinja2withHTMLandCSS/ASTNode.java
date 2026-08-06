@@ -1,58 +1,34 @@
 package ASTJinja2withHTMLandCSS;
 
+import java.util.ArrayList;
 import java.util.List;
+
 public abstract class ASTNode {
-    protected String nodeName;
-    protected int lineNumber;
+    protected final int line;
+    protected final List<ASTNode> children = new ArrayList<>();
 
-    public ASTNode(String nodeName, int lineNumber) {
-        this.nodeName = nodeName;
-        this.lineNumber = lineNumber;
+    public ASTNode(int line) { this.line = line; }
+
+    public int getLine() { return line; }
+
+    public List<ASTNode> getChildren() { return children; }
+
+    public void addChild(ASTNode child) {
+        if (child != null) children.add(child);
     }
 
-    protected String header(String indent) {
-        return indent + " [line " + lineNumber + "] " + nodeName;
-    }
+    public abstract String label();
 
-    public abstract List<ASTNode> getChildren();
-    public void print(String prefix, boolean isLast, int depth,Boolean detail) {
-        if (depth > 0) {
-            System.out.print(prefix);
-            if (depth == 1) {
-                System.out.print("└── ");
-            } else {
-                System.out.print(isLast ? "└── " : "├── ");
-            }
-        }
-        String value = getNodeValue();
-        String displayValue = (detail && value != null && !value.isEmpty()) ? ": " + value : "";
+    public String toTree() { return toTree("", true, true); }
 
-        System.out.println(this.getClass().getSimpleName() + displayValue + " (line " + lineNumber + ")");
-
-        List<ASTNode> children = getChildren();
-        for (int i = 0; i < children.size(); i++) {
-            ASTNode child = children.get(i);
-            if (child == null) continue;
-
-            boolean lastChild = (i == children.size() - 1);
-
-            String nextPrefix;
-            if (depth == 0) {
-                nextPrefix = "";
-            } else if (depth == 1) {
-                nextPrefix = prefix + "    ";
-            } else {
-                nextPrefix = prefix + (isLast ? "    " : "│   ");
-            }
-
-            child.print(nextPrefix, lastChild, depth + 1,detail);
-        }
-    }
-    protected String getNodeValue() {
-        return null;
-    }
-
-    public void print(String indent) {
-        print(indent, true, 0, true);
+    private String toTree(String prefix, boolean isLast, boolean isRoot) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(prefix);
+        if (!isRoot) sb.append(isLast ? "└── " : "├── ");
+        sb.append(label()).append("  (line ").append(line).append(")\n");
+        String childPrefix = isRoot ? "" : prefix + (isLast ? "    " : "│   ");
+        for (int i = 0; i < children.size(); i++)
+            sb.append(children.get(i).toTree(childPrefix, i == children.size() - 1, false));
+        return sb.toString();
     }
 }

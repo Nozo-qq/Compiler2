@@ -7,8 +7,8 @@ import java.util.List;
 public abstract class CSSValueNode extends ASTNode {
     protected String value;
 
-    public CSSValueNode(String nodeName, int line, String value) {
-        super(nodeName, line);
+    public CSSValueNode(int line, String value) {
+        super(line);
         this.value = value;
     }
 
@@ -19,8 +19,4 @@ public abstract class CSSValueNode extends ASTNode {
         return new ArrayList<>(); // القيم غالباً هي أوراق (Leaf Nodes) ليس لها أبناء
     }
 
-    @Override
-    protected String getNodeValue() {
-        return value;
-    }
 }
