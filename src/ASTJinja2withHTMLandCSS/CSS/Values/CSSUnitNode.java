@@ -6,7 +6,7 @@ public class CSSUnitNode extends CSSValueNode {
         super(line, value);
     }
     @Override
-    public  String label(){
-        return  null;
-    };
+    public String label() {
+        return "CSSUnit " + getValue();
+    }
 }
