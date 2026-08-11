@@ -1,11 +1,12 @@
 Semantic Analysis Report
-Generated: 2026-07-29T00:18:15.728975800
+Generated: 2026-08-11T20:21:38.347647200
 Status: PASSED
 
-Top-level functions (4):
+Top-level functions (5):
   - images
   - home
   - product_details
+  - delete_product
   - add_product
 
 Top-level variables (2):

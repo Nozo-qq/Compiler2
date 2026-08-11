@@ -1,4 +1,6 @@
 info: top-level assignment 'app' skipped (not statically resolvable: FunctionCall)
+index.html: skipped kwarg 'products' — not statically resolvable (Name 'visible_products' (not a known top-level static assignment))
 product.html: skipped kwarg 'product' — not statically resolvable (Name 'product' (not a known top-level static assignment))
 ---
-Summary: templates=3, resolvedKwargs=1, skippedKwargs=1, collisions=0
+Summary: templates=3, resolvedKwargs=0, skippedKwargs=2, collisions=0
+[2026-08-11T20:21:38.660297700] regenerated index.html (trigger: startup)

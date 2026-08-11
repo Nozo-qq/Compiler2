@@ -1,3 +1,4 @@
+index.html: for-loop 'p in products' skipped - 'products' is not a list (undefined)
 product.html: 'product.name' is undefined, rendered as empty string
 product.html: 'product.image' is undefined, rendered as empty string
 product.html: 'product.name' is undefined, rendered as empty string

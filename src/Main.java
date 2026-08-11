@@ -4,6 +4,8 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import FlaskStatement.*;
 import output.*;
+import server.AppServer;
+import server.ProductStore;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -78,6 +80,20 @@ public class Main {
                 // succeeded through semantic analysis and context data generation.
                 System.err.println("Template rendering failed: " + renderException.getMessage());
                 renderException.printStackTrace();
+            }
+
+            try {
+                ProductStore store = new ProductStore();
+                store.seed(contextGen.getStaticAssignments());
+                AppServer server = AppServer.start(store, 5001);
+                // The batch pass above couldn't statically resolve index.html's
+                // "products" kwarg anymore (it's now built from a function-local
+                // loop in app.py, not a top-level name) - regenerate it once from
+                // live state so output/index.html is correct from the first moment.
+                server.regenerateIndex("startup");
+            } catch (Exception serverException) {
+                System.err.println("Live server failed to start: " + serverException.getMessage());
+                serverException.printStackTrace();
             }
         } catch (IOException e) {
             System.err.println("Compilation Failed: Could not write output artifacts to compiler_output/.");

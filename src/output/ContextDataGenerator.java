@@ -47,6 +47,14 @@ public class ContextDataGenerator {
         return log.toString();
     }
 
+    /**
+     * Top-level statically-resolved assignments (e.g. "products" -> the seed
+     * list literal). Used to seed the live server's in-memory state.
+     */
+    public Map<String, Object> getStaticAssignments() {
+        return new LinkedHashMap<>(staticAssignments);
+    }
+
     private void collectTopLevelStaticAssignments(List<Statement> statements) {
         for (Statement stmt : statements) {
             if (stmt instanceof Assignment assign && assign.getLeft() instanceof Name n) {

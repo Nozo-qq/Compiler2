@@ -45,13 +45,25 @@ public class Jinja2Runner {
         Files.writeString(OUTPUT_DIR.resolve("render_log.txt"), log.getLogText());
     }
 
-    private static void renderTemplate(String templateName, Map<String, Object> context, HtmlRenderer renderer,
+    /**
+     * Renders a single template on demand (used by the live server for
+     * request-driven regeneration), writing output/&lt;templateName&gt; the
+     * same way renderAll does, and returning the rendered HTML so it can also
+     * be used directly as an HTTP response body. Returns null on failure;
+     * failure details are appended to the given log.
+     */
+    public static String renderOne(String templateName, Map<String, Object> context, boolean detail, RenderLog log) throws IOException {
+        Files.createDirectories(OUTPUT_DIR);
+        return renderTemplate(templateName, context, new HtmlRenderer(), log, detail);
+    }
+
+    private static String renderTemplate(String templateName, Map<String, Object> context, HtmlRenderer renderer,
                                         RenderLog log, boolean detail) {
         Path templatePath = TEMPLATES_DIR.resolve(templateName);
         try {
             if (!Files.exists(templatePath)) {
                 log.append("error: template '" + templateName + "' not found at " + templatePath);
-                return;
+                return null;
             }
 
             MYErrorListener.hasError = false;
@@ -66,7 +78,7 @@ public class Jinja2Runner {
             ParseTree tree = parser.prog();
             if (MYErrorListener.hasError) {
                 log.append("error: template '" + templateName + "' failed to parse, skipped");
-                return;
+                return null;
             }
 
             BaseVisitor visitor = new BaseVisitor(templatePath.toString());
@@ -76,7 +88,7 @@ public class Jinja2Runner {
                 // attribute values using their own MYErrorListener instances; those
                 // failures only surface via the shared flag once visiting completes.
                 log.append("error: template '" + templateName + "' had an unparseable attribute expression, skipped");
-                return;
+                return null;
             }
 
             if (detail) {
@@ -85,8 +97,10 @@ public class Jinja2Runner {
 
             String html = renderer.render(root, context, templateName, log);
             Files.writeString(OUTPUT_DIR.resolve(templateName), html);
+            return html;
         } catch (Exception e) {
             log.append("error: template '" + templateName + "' failed to render (" + e + "), skipped");
+            return null;
         }
     }
 

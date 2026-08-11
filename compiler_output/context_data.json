@@ -1,29 +1,5 @@
 {
-  "index.html": {
-    "products": [
-      {
-        "id": 1,
-        "name": "Laptop",
-        "price": 999,
-        "description": "Fast and reliable laptop.",
-        "image": "laptop.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Phone",
-        "price": 499,
-        "description": "High-quality camera smartphone.",
-        "image": "phone.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Headphones",
-        "price": 199,
-        "description": "Noise-cancelling headphones.",
-        "image": "headphones.jpg"
-      }
-    ]
-  },
+  "index.html": {},
   "product.html": {},
   "add_product.html": {}
 }

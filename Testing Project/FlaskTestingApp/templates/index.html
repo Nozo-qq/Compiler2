@@ -18,6 +18,9 @@
         <h2>{{ p.name }}</h2>
         <p class="price">$ {{ p.price }}</p>
     </a>
+    <form method="POST" action="/delete/{{ p.id }}" class="delete-form">
+        <button type="submit">Delete</button>
+    </form>
     {% endfor %}
 </div>
 
